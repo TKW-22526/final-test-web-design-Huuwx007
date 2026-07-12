@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thư viện</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/library.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="brand" href="../index.html">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#C9A227"
+            stroke-width="2"
+          >
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+          </svg>
+          Giấy &amp; Mực
+        </a>
+        <div class="nav-tabs">
+          <a class="nav-btn" href="../index.html">Cửa hàng</a>
+          <a class="nav-btn" href="cart.html"
+            >Giỏ hàng <span id="cart-count"></span
+          ></a>
+          <a class="nav-btn active" href="library.html">Thư viện</a>
+          <a class="nav-btn" href="quotes.html">Trích dẫn</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrap">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 12px;
+          flex-wrap: wrap;
+        "
+      >
+        <div>
+          <h1 class="page-title">Thư viện</h1>
+          <p class="page-sub">
+            Theo dõi tiến độ đọc và cảm nhận về từng cuốn sách.
+          </p>
+        </div>
+        <button
+          class="btn btn-rose"
+          id="add-book-toggle"
+          onclick="togglePicker()"
+          style="flex-shrink: 0"
+        >
+          + Thêm sách vào thư viện
+        </button>
+      </div>
+
+      <div
+        id="picker-panel"
+        class="hidden"
+        style="
+          background: var(--card);
+          border: 1px solid var(--line2);
+          border-radius: 10px;
+          padding: 16px;
+          margin-bottom: 20px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+          "
+        >
+          <strong style="font-size: 14px"
+            >Chọn sách từ kho dữ liệu (không cần mua)</strong
+          >
+          <button class="btn btn-link" onclick="togglePicker()">Đóng</button>
+        </div>
+        <div class="grid" id="picker-grid"></div>
+      </div>
+
+      <div class="pills" id="lib-pills"></div>
+      <div id="library-list"></div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/library.js"></script>
+  </body>
+</html>

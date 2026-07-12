@@ -1,4 +1,4 @@
-/* ---------------- CHI TIẾT SẢN PHẨM (Cửa hàng) ---------------- */
+/* ---------------- CHI TIẾT SẢN PHẨM---------------- */
 const productId = Number(new URLSearchParams(window.location.search).get("id"));
 let currentImages = [];
 let currentImageIdx = 0;

@@ -1,0 +1,75 @@
+.lib-row {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(30, 20, 10, 0.08);
+  margin-bottom: 10px;
+}
+.lib-row .info {
+  flex: 1;
+  min-width: 0;
+}
+.lib-row .t {
+  font-weight: 600;
+  font-size: 15px;
+}
+.lib-row .a {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.status-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+.status-muon_doc {
+  background: #ede6d6;
+  color: #5b5342;
+}
+.status-dang_doc {
+  background: #fbebc5;
+  color: #8a6a0a;
+}
+.status-da_doc {
+  background: #dcebe1;
+  color: #2e5945;
+}
+.progress-bar {
+  height: 6px;
+  background: var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--gold);
+}
+.progress-label {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.quote-count {
+  font-size: 12px;
+  color: var(--rose);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* Nút xóa sách trong lib-row — dùng chung selector với .remove ở cart.css */
+.lib-row .remove {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--rose);
+  flex-shrink: 0;
+}

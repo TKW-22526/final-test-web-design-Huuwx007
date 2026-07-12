@@ -1,0 +1,52 @@
+.qotd-card {
+  background: linear-gradient(135deg, var(--ink) 0%, #16281f 100%);
+  color: #f3ead2;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+.qotd-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.qotd-content {
+  font-family: "Source Serif 4", serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+.qotd-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #c9bfa4;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 10px;
+}
+.qotd-foot strong {
+  color: #f3ead2;
+}
+.qotd-mark {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  font-family: "Source Serif 4", serif;
+  font-size: 90px;
+  color: rgba(255, 255, 255, 0.06);
+  line-height: 1;
+}

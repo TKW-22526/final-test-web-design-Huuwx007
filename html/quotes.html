@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trích dẫn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/quotes.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="brand" href="../index.html">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#C9A227"
+            stroke-width="2"
+          >
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+          </svg>
+          Giấy &amp; Mực
+        </a>
+        <div class="nav-tabs">
+          <a class="nav-btn" href="../index.html">Cửa hàng</a>
+          <a class="nav-btn" href="cart.html"
+            >Giỏ hàng <span id="cart-count"></span
+          ></a>
+          <a class="nav-btn" href="library.html">Thư viện</a>
+          <a class="nav-btn active" href="quotes.html">Trích dẫn</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrap">
+      <h1 class="page-title">Kho trích dẫn</h1>
+      <p class="page-sub">
+        Tổng hợp tất cả trích dẫn bạn đã lưu, từ mọi cuốn sách trong thư viện.
+      </p>
+      <div class="search-wrap">
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input
+          type="text"
+          id="quote-search"
+          placeholder="Tìm trích dẫn hoặc tên sách..."
+          oninput="renderQuotesView()"
+        />
+      </div>
+      <div class="quotes-grid" id="all-quotes-grid"></div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/quotes.js"></script>
+  </body>
+</html>

@@ -73,6 +73,14 @@ const SAMPLE_BOOKS = [
     price: 159000, 
     pages: 512,
     cover:"assets/images/sapiens.webp"},
+  {
+    id: 10, 
+    title: "Ông Già Và Biển Cả", 
+    author: "Ernest Hemingway", 
+    genre: "Tiểu thuyết", 
+    price: 40000, 
+    pages: 148,
+    cover:"assets/images/onggiavabienca.webp"},
 ];
 
 const STATUS_LIST = [

@@ -40,11 +40,10 @@ input[type="range"] {
 .star {
   cursor: pointer;
 }
-
 .quotes-panel {
   background: var(--card);
   border-radius: 10px;
-  adding: 18px;
+  padding: 18px;
 }
 .quotes-panel h2 {
   font-size: 18px;

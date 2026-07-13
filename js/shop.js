@@ -1,5 +1,6 @@
 /* ---------------- TRANG CHỦ / CỬA HÀNG ---------------- */
 let genreFilter = "Tất cả";
+let searchQuery = "";
 
 function renderGenrePills(){
   const genres = ["Tất cả", ...Object.keys(GENRE_COLORS)];
@@ -11,12 +12,30 @@ function renderGenrePills(){
 
 function setGenreFilter(g){ genreFilter = g; renderShop(); }
 
+function setSearchQuery(q){ searchQuery = q.trim().toLowerCase(); renderShop(); }
+
 function renderShop(){
   renderGenrePills();
-  const books = genreFilter === "Tất cả" ? SAMPLE_BOOKS : SAMPLE_BOOKS.filter(b => b.genre === genreFilter);
-  document.getElementById("shop-grid").innerHTML = books.map(b => `
-    <div class="book-card" onclick="window.location.href='html/product-detail.html?id=${b.id}'" style="cursor:pointer;">
-      ${coverHTML(b.title, b.genre, "md",b.cover)}
+
+  let books = genreFilter === "Tất cả" ? SAMPLE_BOOKS : SAMPLE_BOOKS.filter(b => b.genre === genreFilter);
+
+  if (searchQuery) {
+    books = books.filter(b =>
+      b.title.toLowerCase().includes(searchQuery) ||
+      b.author.toLowerCase().includes(searchQuery)
+    );
+  }
+
+  const el = document.getElementById("shop-grid");
+
+  if (books.length === 0){
+    el.innerHTML = `<div class="empty">Không tìm thấy cuốn sách nào phù hợp. Thử từ khóa khác nhé.</div>`;
+    return;
+  }
+
+  el.innerHTML = books.map(b => `
+    <div class="book-card" onclick="window.location.href='product-detail.html?id=${b.id}'" style="cursor:pointer;">
+      ${coverHTML(b.title, b.genre, "md",b.cover,true)}
       <div class="book-info">
         <span class="genre-tag">${b.genre}</span>
         <span class="book-title">${b.title}</span>
@@ -39,6 +58,7 @@ function addToCart(id){
 }
 
 document.addEventListener("DOMContentLoaded", renderShop);
+
 function renderQOTD(){
   const el = document.getElementById("qotd-card");
   if (!el) return;
@@ -55,7 +75,7 @@ function renderQOTD(){
   const q = all[Math.floor(Math.random() * all.length)];
 
   el.innerHTML = `
-    <div class="qotd-card" onclick="window.location.href='html/book-detail.html?id=${q.bookId}'">
+    <div class="qotd-card" onclick="window.location.href='product-detail.html?id=${q.bookId}'">
       <span class="qotd-mark">"</span>
       <div class="qotd-label">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/></svg>

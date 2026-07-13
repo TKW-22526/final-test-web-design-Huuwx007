@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/landing.css" />
   </head>
   <body>
     <nav>
@@ -30,7 +30,8 @@
           Giấy &amp; Mực
         </a>
         <div class="nav-tabs">
-          <a class="nav-btn active" href="index.html">Cửa hàng</a>
+          <a class="nav-btn active" href="index.html">Trang chủ</a>
+          <a class="nav-btn" href="html/cua-hang.html">Cửa hàng</a>
           <a class="nav-btn" href="html/cart.html"
             >Giỏ hàng <span id="cart-count"></span
           ></a>
@@ -42,21 +43,117 @@
       </div>
     </nav>
 
+    <!-- Hero -->
+    <div class="hero-landing">
+      <div class="wrap">
+        <span class="hero-eyebrow">Hiệu sách trực tuyến</span>
+        <h1 class="hero-landing-title">
+          Mỗi cuốn sách,<br />một hành trình đáng nhớ
+        </h1>
+        <p class="hero-landing-sub">
+          Chọn mua sách, theo dõi tiến độ đọc, và lưu lại những câu văn khiến
+          bạn dừng lại suy ngẫm — tất cả trong một nơi.
+        </p>
+        <a href="html/cua-hang.html" class="btn btn-gold hero-cta"
+          >Khám phá cửa hàng →</a
+        >
+      </div>
+    </div>
+
     <div class="wrap">
-      <h1 class="page-title">Chọn cuốn sách tiếp theo của bạn</h1>
-      <p class="page-sub">
-        Mua sách — mọi cuốn bạn mua sẽ tự động vào mục "Thư viện của tôi" để
-        theo dõi tiến độ đọc.
-      </p>
-      <div id="qotd-card"></div>
-      <div class="pills" id="genre-pills"></div>
-      <div class="grid" id="shop-grid"></div>
+      <!-- Highlights -->
+      <div class="landing-highlights">
+        <div class="highlight-card">
+          <div
+            class="highlight-icon"
+            style="background: #7a3b2e1a; color: #7a3b2e"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+          </div>
+          <h3>Kệ sách tuyển chọn</h3>
+          <p>
+            Đa dạng thể loại, từ tiểu thuyết đến triết học — mỗi cuốn đều được
+            chọn lọc kỹ càng.
+          </p>
+        </div>
+        <div class="highlight-card">
+          <div
+            class="highlight-icon"
+            style="background: #c9a2271a; color: #8a6a0a"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <h3>Theo dõi tiến độ đọc</h3>
+          <p>
+            Ghi nhớ bạn đang đọc đến trang nào, đánh giá và quay lại bất cứ lúc
+            nào.
+          </p>
+        </div>
+        <div class="highlight-card">
+          <div
+            class="highlight-icon"
+            style="background: #a8433a1a; color: #a8433a"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"
+              />
+              <path
+                d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v4z"
+              />
+            </svg>
+          </div>
+          <h3>Lưu giữ trích dẫn</h3>
+          <p>
+            Đừng để những câu văn hay bị lãng quên — lưu lại và tìm đọc lại bất
+            cứ khi nào.
+          </p>
+        </div>
+      </div>
+
+      <!-- Secondary CTA -->
+      <div class="landing-cta-row">
+        <a href="html/library.html" class="landing-cta-card">
+          <h3>Đã có sách muốn theo dõi?</h3>
+          <p>Xem thư viện cá nhân của bạn →</p>
+        </a>
+        <a href="html/quotes.html" class="landing-cta-card">
+          <h3>Muốn tìm lại câu văn yêu thích?</h3>
+          <p>Xem kho trích dẫn đã lưu →</p>
+        </a>
+      </div>
     </div>
 
     <div id="toast"></div>
 
     <script src="js/data.js"></script>
     <script src="js/storage.js"></script>
-    <script src="js/shop.js"></script>
   </body>
 </html>

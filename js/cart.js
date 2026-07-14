@@ -1,4 +1,3 @@
-
 function renderCart(){
   const el = document.getElementById("cart-content");
   if (state.cart.length === 0){

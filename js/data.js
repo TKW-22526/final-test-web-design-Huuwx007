@@ -95,7 +95,6 @@ function findBook(id){ return SAMPLE_BOOKS.find(b => b.id === Number(id)); }
 
 function coverHTML(title, genre, size, cover, isSubPage = false) {
   if (cover) {
-    // Nếu là trang con (như trang library), tự động thêm ../ vào trước đường dẫn ảnh
     const finalCoverPath = isSubPage ? `../${cover}` : cover;
 
     return `<div class="cover ${size}">
@@ -103,7 +102,6 @@ function coverHTML(title, genre, size, cover, isSubPage = false) {
     </div>`;
   }
 
-  // Khúc vẽ bằng CSS giữ nguyên...
   const color = GENRE_COLORS[genre] || "#3A3226";
   const initial = title.trim().charAt(0).toUpperCase();
   return `<div class="cover ${size}" style="background:linear-gradient(155deg, ${color} 0%, ${color}CC 100%);"><div class="initial">${initial}</div><div class="cover-title">${title}</div></div>`;

@@ -51,7 +51,6 @@ function setStatus(status){
   saveState();
   renderDetail();
 }
-// Cập nhật số trang NGAY khi đang kéo (chỉ trong bộ nhớ, chưa lưu)
 function onPageDrag(val){
   const entry = findLibEntry(activeBookId);
   const book = findBook(activeBookId);
@@ -59,7 +58,6 @@ function onPageDrag(val){
   const label = document.getElementById("page-label");
   if (label) label.textContent = `Trang hiện tại: ${val}/${book.pages}`;
 }
-// Khi thả tay ra: lưu dữ liệu thật
 function onPageRelease(val){
   findLibEntry(activeBookId).currentPage = Number(val);
   saveState();
